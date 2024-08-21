@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import Button from '../../components/ui/Button';
 import SearchBar from "../../components/ui/SearchBar";
 import NavbarUnauth from "../../components/layout/Navbar_unauth";
-
+import BuyNowButton from "../../components/ui/BuyNowButton"
+import VideoHeader from "../../components/ui/VideoHeader";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -18,12 +19,17 @@ export default function Home() {
     position: 'absolute', 
     top: '50%', 
     left: '50%', 
-    transform: 'translate(-50%, -80%)' 
+    transform: 'translate(-50%, -70%)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   }}>
-    <Image src="/Logo.png" alt="Long Vu Logo" width={400} height={800} />
+    <Image src="/Logo.png" alt="Long Vu Logo" width={400} height={800}/>
+    <BuyNowButton button_text="BUY NOW"></BuyNowButton>
   </div>
 </div>
-      <Button button_text="BUY NOW"></Button>
+<VideoHeader></VideoHeader>
+
     </main>
   );
 }
