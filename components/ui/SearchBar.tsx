@@ -1,33 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Search } from 'lucide-react';
 
-const Button = ({button_text}) => {
-
-    const [isHovered, setIsHovered] = useState(false);
+const SearchBar = () => {
   return (
-    <button
-      className="border border-white"
+    <div 
+      className="flex items-center bg-white rounded-full shadow-lg"
       style={{
-        backgroundColor: isHovered ? '#FFFFFF' : '#000000',
-        width: '98.448px',
-        height: '32.319px',
-        flexShrink: 0,
-        color: isHovered ? '#000000' : '#FFFFFF',
-        textShadow: '0px 3.485px 3.485px rgba(255, 255, 255, 0.25)',
-        fontFamily: 'Montserrat, sans-serif',
-        fontSize: '16.661px',
-        fontStyle: 'normal',
-        fontWeight: isHovered ? 700 : 400,
-        lineHeight: 'normal',
-        letterSpacing: '1.666px',
-        borderWidth: '0.994px',
-        padding: 0,
+        width: '1014px',
+        height: '43px',
+        padding: '9.264px 0px 8.003px 18.529px',
+        gap: '12.35px',
+        borderRadius: '51.466px',
+        boxShadow: '-7.841px 5.227px 4.117px 0px rgba(0, 0, 0, 0.25)'
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}  
     >
-        {button_text}
-    </button>
+       <Search size={20} className="text-black min-w-[20px]" />
+      <input
+        type="text"
+        placeholder="Find your favorite clothes"
+        className="bg-transparent outline-none focus:outline-none focus:ring-0 border-none text-sm ml-3"
+        style={{ 
+          fontFamily: 'Montserrat, sans-serif',
+          width: 'calc(100% - 40px)', // Subtracting the width of the icon and some padding
+          WebkitAppearance: 'none',
+          MozAppearance: 'none',
+          appearance: 'none'
+        }}
+      />
+      <style jsx>{`
+        input:focus {
+          outline: none !important;
+          box-shadow: none !important;
+          -webkit-box-shadow: none !important;
+          -moz-box-shadow: none !important;
+        }
+      `}</style>
+    </div>
   );
 };
 
-export default Button;
+export default SearchBar;
+
