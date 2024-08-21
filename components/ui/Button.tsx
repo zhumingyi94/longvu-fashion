@@ -10,7 +10,6 @@ const Button = ({button_text}) => {
         backgroundColor: isHovered ? '#FFFFFF' : '#000000',
         width: '98.448px',
         height: '32.319px',
-        flexShrink: 0,
         color: isHovered ? '#000000' : '#FFFFFF',
         textShadow: '0px 3.485px 3.485px rgba(255, 255, 255, 0.25)',
         fontFamily: 'Montserrat, sans-serif',
@@ -27,6 +26,8 @@ const Button = ({button_text}) => {
     >
         {button_text}
     </button>
+
+    
   );
 };
 

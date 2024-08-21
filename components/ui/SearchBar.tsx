@@ -4,35 +4,43 @@ import { Search } from 'lucide-react';
 const SearchBar = () => {
   return (
     <div 
-      className="flex items-center bg-white rounded-full shadow-lg"
+      className="bg-white flex items-center rounded-full shadow-lg"
       style={{
-        width: '1014px',
+        maxWidth: '100%',
         height: '43px',
-        padding: '9.264px 0px 8.003px 18.529px',
-        gap: '12.35px',
+        padding: '9px 20px',
+        gap: '12px',
+        backgroundColor: 'white',
         borderRadius: '51.466px',
-        boxShadow: '-7.841px 5.227px 4.117px 0px rgba(0, 0, 0, 0.25)'
+        boxShadow: '-7.841px 5.227px 4.117px 0px rgba(0, 0, 0, 0.25)',
+        flexGrow: 4
       }}
     >
-       <Search size={20} className="text-black min-w-[20px]" />
+      <Search size={20} className="text-black min-w-[20px]" />
       <input
         type="text"
         placeholder="Find your favorite clothes"
-        className="bg-transparent outline-none focus:outline-none focus:ring-0 border-none text-sm ml-3"
+        className="outline-none focus:outline-none focus:ring-0 border-none text-sm ml-3"
         style={{ 
           fontFamily: 'Montserrat, sans-serif',
-          width: 'calc(100% - 40px)', // Subtracting the width of the icon and some padding
+          width: 'calc(100% - 40px)',
           WebkitAppearance: 'none',
           MozAppearance: 'none',
-          appearance: 'none'
+          appearance: 'none',
+          background: 'transparent',
+          backgroundColor: 'transparent'
         }}
       />
       <style jsx>{`
+        input {
+          background-color: transparent !important;
+        }
         input:focus {
           outline: none !important;
           box-shadow: none !important;
           -webkit-box-shadow: none !important;
           -moz-box-shadow: none !important;
+          background-color: transparent !important;
         }
       `}</style>
     </div>
@@ -40,4 +48,6 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+
 
